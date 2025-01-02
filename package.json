@@ -1,0 +1,12 @@
+{
+  "name": "episode-1",
+  "version": "1.0.0",
+  "description": "This is just testing",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Shubham Singh",
+  "license": "ISC"
+}
