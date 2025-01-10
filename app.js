@@ -1,43 +1,96 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Title = () => {
-  return (
-    <h1>This is my react learning journey.</h1>
-  );
-};
+/*
+
+* Header
+-logo
+-nav-items
+
+* Body
+ -searchbar
+ -restaurant-container
+  -restaurant-card
+    -restaurant-image
+    -name of res,star rating ,cuisine,delivery time
+
+* Footer
+  -copyright
+  -links
+  -address
+  -contact
+
+
+*/
 const Header = () => {
   return (
-    <>
-      <Title />
-      <h2>
-        This is going to be the heading of my
-        project
-      </h2>
-      <h3>
-        Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Ipsa, quis sapiente
-        dolore velit totam commodi aliquam
-        veritatis eum culpa cum, dolorum
-        reiciendis officiis quibusdam earum esse
-        possimus quisquam adipisci! Provident!
-        Vel, corrupti exercitationem optio fugit
-        sit, aperiam suscipit autem inventore
-        voluptate, rem numquam error? Itaque,
-        provident veritatis dicta nulla, porro
-        aliquam sequi, tempora repellat veniam
-        cupiditate asperiores consectetur
-        inventore amet? Vel perferendis at, itaque
-        natus animi saepe iusto in aspernatur
-        ratione quidem eum blanditiis possimus
-        dolores? Esse, quam! Atque id repellendus
-        quis ut neque aliquam vero rerum adipisci
-        cum odio.
-      </h3>
-    </>
+    <div className="header">
+      <div className="logo-container">
+        <img
+          src="https://media.istockphoto.com/id/1435983029/vector/food-delivery-logo-images.jpg?s=612x612&w=0&k=20&c=HXPxcjOxUiW4pMW1u9E0k2dJYQOU37a_0qZAy3so8fY="
+          alt="Logo"
+          className="logo"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
   );
 };
+const ResCard = (props) => {
+  console.log(props);
+  return (
+    <div className="res-card">
+      <div className="res-image">
+        <img
+          src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/hxxasn2kf8g9eyi9eonq"
+          alt="res-image"
+        />
+      </div>
+      <div className="res-info">
+        <h3>{props.resName}</h3>
+        <p>{props.cuisine}</p>
+        <p>Non-Veg</p>
+        <p>20 min</p>
+      </div>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">
+        {/* for future input field */}
+      </div>
+      <div className="res-container">
+        {/* restaurant cards */}
+        <ResCard
+          resName="Taz restaurant"
+          cuisine="Mutton"
+        />
+        <ResCard resName="Kfc" cuisine="Burger" />
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+
 const root = ReactDOM.createRoot(
   document.getElementById("root")
 );
-root.render(<Header />);
+root.render(<AppLayout />);
