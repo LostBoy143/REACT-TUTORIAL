@@ -24,7 +24,8 @@ body {
   list-style: none;
   justify-content: space-evenly;
   gap: 50px;
-  font-size: 20px;
+  color: white;
+  font-size: 14px;
   font-style: bold;
 }
 .nav-items ul li {
@@ -37,13 +38,59 @@ body {
   padding: 10px;
   margin: 10px;
   cursor: pointer;
+  border-radius: 20px;
 }
 .res-image img {
   height: 100px;
   width: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 .res-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-button {
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px;
+  background: rgb(67, 133, 171);
+  color: white;
+  outline: none;
+  border: none;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 50px;
+}
+.shimmer-card {
+  height: 250px;
+  width: 250px;
+  margin: 10px;
+  background: white;
+  border-radius: 20px;
+  animation: shimmer 700ms infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  75% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
 }
