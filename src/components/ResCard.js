@@ -2,29 +2,23 @@ import React from "react";
 import { IMG_URL } from "../utils/constant";
 const ResCard = (props) => {
   const {
-    costForTwo,
-    id,
+    cost,
+
     name,
-    cuisines,
     avgRating,
     deliveryTime,
-    cloudinaryImageId,
-  } = props?.res?.info;
+  } = props?.res;
   return (
-    <div className="res-card" key={id}>
+    <div className="res-card">
       <div className="res-image h-auto">
         <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-            cloudinaryImageId
-          }
+          src="https://media.istockphoto.com/id/1457433817/photo/group-of-healthy-food-for-flexitarian-diet.jpg?s=612x612&w=0&k=20&c=v48RE0ZNWpMZOlSp13KdF1yFDmidorO2pZTu2Idmd3M="
           alt="res-image"
         />
       </div>
       <div className="res-info">
         <h3>{name}</h3>
-        <p>{cuisines.join()}</p>
-        <p>{costForTwo}</p>
+        <p>{cost}</p>
         <p>{avgRating}</p>
         <p>{deliveryTime} mins</p>
       </div>

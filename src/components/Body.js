@@ -2,32 +2,22 @@ import ResCard from "./ResCard";
 import { useState, useEffect } from "react";
 import { API_URL } from "../utils/constant";
 import Shimmer from "./Shimmer";
+import mockData from "../utils/mockData";
 
 const Body = () => {
-  const [resList, setResList] = useState([]);
+  const [resList, setResList] =
+    useState(mockData);
+  const [filResList, setFilResList] =
+    useState(mockData);
+
+  const [inputValue, setInputValue] =
+    useState("");
   const filter = () => {
     filteredResList = resList.filter(
-      (res) => res?.info?.avgRating >= 4.4
+      (res) => res?.avgRating >= 4
     );
-    setResList(filteredResList);
+    setFilResList(filteredResList);
     // for testing purposes
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-  const fetchData = async () => {
-    const response = await fetch(API_URL);
-    if (!response.ok) {
-      throw new Error(
-        "Network response was not ok"
-      );
-    }
-    const jsonData = await response.json();
-    console.log(jsonData?.data);
-    setResList(
-      jsonData?.data?.cards[1]?.card?.card
-        ?.gridElements?.infoWithStyle?.restaurants
-    );
   };
 
   if (resList.length === 0) {
@@ -36,26 +26,46 @@ const Body = () => {
 
   return (
     <div className="body ">
-      <div className="search">
-        {/* for future input field */}
+      <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search Something"
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filteredResList =
+                resList.filter((res) =>
+                  res?.name
+                    .toLowerCase()
+                    .includes(
+                      inputValue.toLowerCase()
+                    )
+                );
+              setFilResList(filteredResList);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <button
+          className="filter-button"
+          onClick={() => {
+            filter();
+          }}
+        >
+          Top rated restaurants
+        </button>
       </div>
-      <button
-        className="filter-button"
-        onClick={() => {
-          filter();
-        }}
-      >
-        Top rated restaurants
-      </button>
       <div className="res-container ">
         {/* restaurant cards */}
-        {resList.map((res) => {
-          return (
-            <ResCard
-              res={res}
-              key={res?.info?.id}
-            />
-          );
+        {filResList.map((res, idx) => {
+          return <ResCard res={res} key={idx} />;
         })}
       </div>
     </div>
