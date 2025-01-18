@@ -5,7 +5,6 @@ const Productard = (props) => {
     id,
     images,
     title,
-    description,
     category,
     rating,
     price,

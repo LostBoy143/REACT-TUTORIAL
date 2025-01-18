@@ -41,7 +41,7 @@ body {
   border-radius: 20px;
 }
 .res-image img {
-  height: 100px;
+  height: 150px;
   width: 100%;
   object-fit: cover;
   border-radius: 20px;
@@ -78,7 +78,7 @@ body {
   animation: shimmer 3s infinite;
 }
 .shimmer-image {
-  height: 100px;
+  height: 150px;
   width: 100%;
   background: #bebbbb;
   border-radius: 20px;
