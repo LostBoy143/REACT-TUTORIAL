@@ -1,7 +1,7 @@
 import ResCard from "./ResCard";
 import { useState, useEffect } from "react";
-import { API_URL } from "../utils/constant";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -93,8 +93,17 @@ const Body = () => {
       </div>
       <div className="res-container ">
         {/* restaurant cards */}
-        {filResList.map((res, idx) => {
-          return <ResCard res={res} key={idx} />;
+        {filResList.map((res) => {
+          console.log(res?.info?.id);
+          return (
+            <Link
+              key={res.info.id}
+              to={"/restaurants/" + res?.info?.id}
+            >
+              {" "}
+              <ResCard res={res} />
+            </Link>
+          );
         })}
       </div>
     </div>

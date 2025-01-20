@@ -25,11 +25,12 @@ body {
   justify-content: space-evenly;
   gap: 50px;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   font-style: bold;
 }
 .nav-items ul li {
   cursor: pointer;
+  color: black;
 }
 
 .res-card {
@@ -161,6 +162,11 @@ body {
   gap: 20px;
   padding: 20px;
 }
+hr {
+  border: none;
+  height: 1px;
+  background-color: tomato;
+}
 .product-card {
   width: 250px;
   border-radius: 20px;
@@ -174,4 +180,37 @@ body {
   object-fit: contain;
   border-radius: 20px;
   margin-bottom: 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.list-items {
+  width: 100%;
+  padding: 10px 50px;
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+p {
+  text-align: left;
+}
+.menu {
+  background-color: whitesmoke;
+  padding: 50px;
+}
+.menu h1 {
+  text-align: center;
+  padding: 30px;
+  color: tomato;
+}
+.menu h4 {
+  padding: 20px 0 20px 50px;
+  font-size: 18px;
+}
+.menu h2 {
+  text-align: center;
+  padding: 20px;
+  color: tomato;
+  border-bottom: 1px solid tomato;
 }

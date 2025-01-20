@@ -7,6 +7,7 @@ const ResCard = (props) => {
     sla,
     name,
     avgRating,
+    id,
   } = props?.res?.info;
   return (
     <div className="res-card">
