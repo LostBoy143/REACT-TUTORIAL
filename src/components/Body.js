@@ -8,7 +8,7 @@ const Body = () => {
   const [filResList, setFilResList] = useState(
     []
   );
-
+  console.log(useState());
   const [inputValue, setInputValue] =
     useState("");
   const filter = () => {
@@ -94,7 +94,6 @@ const Body = () => {
       <div className="res-container ">
         {/* restaurant cards */}
         {filResList.map((res) => {
-          console.log(res?.info?.id);
           return (
             <Link
               key={res.info.id}
