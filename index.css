@@ -214,3 +214,20 @@ p {
   color: tomato;
   border-bottom: 1px solid tomato;
 }
+.user-card {
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  background-color: whitesmoke;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.user-card h1 {
+  margin-bottom: 20px;
+}
+.user-card img {
+  height: 100px;
+  width: 100px;
+}
