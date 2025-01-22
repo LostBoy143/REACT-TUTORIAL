@@ -7,7 +7,6 @@ const FakeStore = () => {
   const [filProducts, setFilProducts] = useState(
     []
   );
-  console.log(products);
   useEffect(() => {
     fetchData();
   }, []);
