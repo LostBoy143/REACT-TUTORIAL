@@ -12,7 +12,9 @@ const Productard = (props) => {
   return (
     <div className="product-card" key={id}>
       <img src={images[0]} alt="product-img" />
-      <h3 id="title">{title}</h3>
+      <h3 id="title" className="font-bold">
+        {title}
+      </h3>
       <p id="category">{category}</p>
       <div id="rating">{rating?.rate}</div>
       <h3 id="price">$ {price}</h3>

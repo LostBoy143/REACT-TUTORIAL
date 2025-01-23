@@ -32,6 +32,7 @@ const FakeStore = () => {
     <div className="fake-store-container">
       <div className="search-container">
         <input
+          className="border-[1px] border-gray-400"
           type="text"
           value={inputVal}
           placeholder="Search for products"

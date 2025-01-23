@@ -11,7 +11,6 @@ const Body = () => {
   ); // Filtered restaurant list
   const [inputValue, setInputValue] =
     useState(""); // Search input state
-
   // Filter restaurants with an average rating of 4.2 or higher
   const filter = () => {
     const filteredResList = resList.filter(
@@ -55,21 +54,22 @@ const Body = () => {
     return <Shimmer />;
   } else {
     return (
-      <div className="body">
+      <div className="p-8 ">
         {/* Filter and search section */}
         <div className="filter">
-          <div className="search">
+          <div className=" flex gap-2 pl-6 mb-2">
             {/* Search input */}
             <input
               type="text"
-              placeholder="Search Something"
+              className="border-[1px] border-gray-400 text-sm p-1 px-4 rounded-xl"
+              placeholder="Search Something..."
               value={inputValue}
               onChange={(e) =>
                 setInputValue(e.target.value)
               }
             />
             <button
-              className="search-btn"
+              className="border-[1px] border-gray-400 bg-green-200 hover:bg-green-400 text-gray-900 p-1 px-2 rounded-xl"
               onClick={() => {
                 const filteredResList =
                   resList.filter((res) =>
@@ -84,17 +84,17 @@ const Body = () => {
             >
               Search
             </button>
+            {/* Button to filter top-rated restaurants */}
+            <button
+              className="border-[1px] border-gray-400 hover:bg-blue-300 duration-500 px-4 rounded-xl py-1 ml-16"
+              onClick={filter}
+            >
+              Top rated restaurants
+            </button>
           </div>
-          {/* Button to filter top-rated restaurants */}
-          <button
-            className="filter-button"
-            onClick={filter}
-          >
-            Top rated restaurants
-          </button>
         </div>
         {/* Render restaurant cards */}
-        <div className="res-container">
+        <div className="mt-16 px-5 flex flex-wrap justify-between gap-6">
           {filResList.map((res) => (
             <Link
               key={res.info.id}

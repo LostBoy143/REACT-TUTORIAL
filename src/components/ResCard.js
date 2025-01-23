@@ -10,18 +10,19 @@ const ResCard = (props) => {
     id,
   } = props?.res?.info;
   return (
-    <div className="res-card">
+    <div className="min-h-[300px] w-[250px] cursor-pointer bg-gray-200 p-2 rounded-lg ">
       <div className="res-image h-auto">
         <img
           src={`${IMG_URL}${cloudinaryImageId}`}
           alt="res-image"
+          className="h-[150px] object-cover w-full rounded-lg"
         />
       </div>
-      <div className="res-info">
-        <h3>{name}</h3>
+      <div className="res-info flex flex-col justify-between">
+        <h3 className="font-bold">{name}</h3>
         <p>{costForTwo}</p>
-        <p>{avgRating}</p>
-        <p>{sla.slaString}</p>
+        <p>{avgRating} ⭐</p>
+        <p>{sla.slaString} ⌛</p>
       </div>
     </div>
   );

@@ -1,14 +1,10 @@
 import { LOGO_URL } from "../utils/constant";
-import { useState, useEffect } from "react";
 import { Link } from "react-router";
 
 const Header = () => {
-  const [btnName, setBtnName] = useState("Login");
-  useEffect(() => {}, [btnName]);
-
   return (
-    <div className="header">
-      <div className="logo-container">
+    <div className="flex  bg-pink-100 h-[96px] shadow-lg mb-3 px-4 justify-between items-center">
+      <div className="w-24">
         <img
           src={LOGO_URL}
           alt="Logo"
@@ -16,18 +12,26 @@ const Header = () => {
         />
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="flex gap-8">
           <Link to="/">
-            <li>Home</li>
+            <li className="hover:text-gray-700 hover:border-b-[2px] border-gray-600">
+              Home
+            </li>
           </Link>
           <Link to="/store">
-            <li>MyStore</li>
+            <li className="hover:text-gray-700 hover:border-b-[2px] border-gray-600">
+              MyStore
+            </li>
           </Link>
           <Link to="/about">
-            <li>About us</li>
+            <li className="hover:text-gray-700 hover:border-b-[2px] border-gray-600">
+              About us
+            </li>
           </Link>
           <Link to="/contact">
-            <li>Contact Us</li>
+            <li className="hover:text-gray-700 hover:border-b-[2px] border-gray-600">
+              Contact Us
+            </li>
           </Link>
         </ul>
       </div>
