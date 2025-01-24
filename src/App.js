@@ -4,27 +4,39 @@ import {
   RouterProvider,
   Outlet,
 } from "react-router";
-import { lazy, Suspense } from "react";
+import {
+  createContext,
+  useState,
+  lazy,
+  Suspense,
+} from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
-// import FakeStore from "./components/FakeStore";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
-
 const FakeStore = lazy(() =>
   import("./components/FakeStore")
 );
+import UserContext from "./contexts/UserContext";
+
 const AppLayout = () => {
+  const [user, setUser] = useState("Shubham");
+  const [user2, setUser2] = useState("Sahu");
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider
+      value={{ user, setUser, user2, setUser2 }}
+    >
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
+
 const appRouter = createBrowserRouter([
   {
     path: "/",

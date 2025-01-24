@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IMG_URL } from "../utils/constant";
+import UserContext from "../contexts/UserContext";
+
 const ResCard = (props) => {
+  const { user2, setUser2 } =
+    useContext(UserContext);
+  setUser2("Sahil");
+  console.log(user2);
   const {
     costForTwo,
     cloudinaryImageId,

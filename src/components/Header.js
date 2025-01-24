@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router";
+import UserContext from "../contexts/UserContext";
 
 const Header = () => {
+  const { user } = useContext(UserContext);
+  console.log(user);
   return (
     <div className="flex  bg-pink-100 h-[96px] shadow-lg mb-3 px-4 justify-between items-center">
       <div className="w-24">
